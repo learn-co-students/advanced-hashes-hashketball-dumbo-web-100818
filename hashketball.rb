@@ -158,7 +158,7 @@ def team_colors(team)
    number = []
    game_hash.each do |key, value|
      if team == game_hash[key][:team_name]
-       value[:players].each do |player_name, stats|
+       value[:players].each do |player, stats|
        number << stats[:number]
      end
    end
@@ -177,8 +177,8 @@ def player_stats(name)
 end
 
 def big_shoe_rebounds
-  big_shoes_guy = nil
-  rebounds = nil
+  big_shoes_guy = 0
+  rebounds = 0
     game_hash.each do |key, value|
       value[:players].each do |name, stats|
         if stats[:shoe] > big_shoes_guy
